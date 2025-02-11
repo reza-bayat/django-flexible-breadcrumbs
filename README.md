@@ -108,7 +108,7 @@ To render breadcrumbs in your templates, use the `{% render_breadcrumbs %}` temp
 
 The default template (`breadcrumbs.html`) looks like this:
 
-```bush
+```bash
 {% if breadcrumbs %}
     <nav aria-label="breadcrumb">
         <ol>
