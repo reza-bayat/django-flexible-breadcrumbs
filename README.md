@@ -87,6 +87,7 @@ def my_view(request):
 To render breadcrumbs in your templates, use the `{% render_breadcrumbs %}` template tag:
 
 ```html
+{% load breadcrumbs_tags %}
 <!DOCTYPE html>
 <html>
 <head>
