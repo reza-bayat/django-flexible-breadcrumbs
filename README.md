@@ -24,7 +24,7 @@ pip install -e /path/to/django-flexible-breadcrumbs
 
 Add the package to the `INSTALLED_APPS` list in your `settings.py` file:
 
-```bash
+```python
 INSTALLED_APPS = [
     ...
     'django_flexible_breadcrumbs',
@@ -36,7 +36,7 @@ INSTALLED_APPS = [
 
 To make breadcrumbs available across all pages, add the context processor to the `TEMPLATES` setting in `settings.py`:
 
-```bash
+```python
 TEMPLATES = [
     {
         ...
@@ -54,7 +54,7 @@ TEMPLATES = [
 
 The package provides several pre-built templates for different CSS frameworks. You can specify which template to use by setting the `BREADCRUMBS_TEMPLATE` variable in `settings.py`. For example:
 
-```bash
+```python
 BREADCRUMBS_TEMPLATE = 'breadcrumbs_bootstrap.html'  # Use Bootstrap template
 ```
 
@@ -108,7 +108,7 @@ To render breadcrumbs in your templates, use the `{% render_breadcrumbs %}` temp
 
 The default template (`breadcrumbs.html`) looks like this:
 
-```bash
+```html
 {% if breadcrumbs %}
     <nav aria-label="breadcrumb">
         <ol>
@@ -132,7 +132,7 @@ The package includes several pre-built templates for popular CSS frameworks. Bel
 
 **1- Bootstrap (`breadcrumbs_bootstrap.html`)**
 
-```bash
+```html
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         {% for breadcrumb in breadcrumbs %}
@@ -149,7 +149,7 @@ The package includes several pre-built templates for popular CSS frameworks. Bel
 ```
 
 **2- Foundation (`breadcrumbs_foundation.html`)**
-```bash
+```html
 <nav aria-label="You are here:" role="navigation">
     <ul class="breadcrumbs">
         {% for breadcrumb in breadcrumbs %}
@@ -165,7 +165,7 @@ The package includes several pre-built templates for popular CSS frameworks. Bel
 </nav>
 ```
 **3- Tailwind CSS (`breadcrumbs_tailwind.html`)**
-```bash
+```html
 <nav aria-label="Breadcrumb">
     <ol class="flex items-center space-x-2">
         {% for breadcrumb in breadcrumbs %}
@@ -189,7 +189,7 @@ The package includes several pre-built templates for popular CSS frameworks. Bel
 
 You can retrieve the list of breadcrumbs from the request object using the `get_breadcrumbs` utility function:
 
-```bash
+```python
 from django_flexible_breadcrumbs.utils import get_breadcrumbs
 
 def my_view(request):
@@ -201,7 +201,7 @@ def my_view(request):
 
 **Example 1: Adding Breadcrumbs in Multiple Steps**
 
-```bash
+```python
 from django.shortcuts import render
 from django_flexible_breadcrumbs.context_processors import add_breadcrumb
 
@@ -216,12 +216,12 @@ def product_detail(request, product_id):
 
 If you want to use a custom template, specify its path in `settings.py`:
 
-```bash
+```python
 BREADCRUMBS_TEMPLATE = 'custom_breadcrumbs.html'
 ```
 
 Then, create your custom template:
-```bash
+```html
 <nav>
     <ul>
         {% for breadcrumb in breadcrumbs %}
