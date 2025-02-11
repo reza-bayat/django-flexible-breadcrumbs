@@ -72,7 +72,7 @@ If this setting is not provided, the package will use the default template (`bre
 
 Use the `add_breadcrumb` function in your views to add breadcrumbs dynamically:
 
-```bash
+```python
 from django.shortcuts import render
 from django_flexible_breadcrumbs.context_processors import add_breadcrumb
 
