@@ -125,7 +125,7 @@ The default template (`breadcrumbs.html`) looks like this:
 {% endif %}
 ```
 
-##Pre-Built Templates
+## Pre-Built Templates
 
 The package includes several pre-built templates for popular CSS frameworks. Below are examples of how breadcrumbs are rendered in each template.
 
