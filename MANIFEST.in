@@ -1,0 +1,5 @@
+# MANIFEST.in
+recursive-include django_flexible_breadcrumbs/templates *
+recursive-include django_flexible_breadcrumbs/templatetags *
+include README.md
+include LICENSE

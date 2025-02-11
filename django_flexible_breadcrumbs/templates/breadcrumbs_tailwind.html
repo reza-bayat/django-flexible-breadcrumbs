@@ -1,0 +1,14 @@
+<nav aria-label="Breadcrumb" class="flex items-center space-x-2 text-gray-600">
+    {% for breadcrumb in breadcrumbs %}
+        <span>
+            {% if not forloop.last and breadcrumb.url %}
+                <a href="{{ breadcrumb.url }}" class="hover:text-blue-600">{{ breadcrumb.label }}</a>
+            {% else %}
+                <span>{{ breadcrumb.label }}</span>
+            {% endif %}
+        </span>
+        {% if not forloop.last %}
+            <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 5.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"/></svg>
+        {% endif %}
+    {% endfor %}
+</nav>

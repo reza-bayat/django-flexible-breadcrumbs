@@ -1,0 +1,16 @@
+<nav aria-label="Breadcrumb">
+    <ol style="display: flex; gap: 8px; list-style: none; padding: 0;">
+        {% for breadcrumb in breadcrumbs %}
+            <li>
+                {% if not forloop.last and breadcrumb.url %}
+                    <a href="{{ breadcrumb.url }}" style="text-decoration: none; color: blue;">{{ breadcrumb.label }}</a>
+                {% else %}
+                    <span>{{ breadcrumb.label }}</span>
+                {% endif %}
+            </li>
+            {% if not forloop.last %}
+                <li style="color: gray;">/</li>
+            {% endif %}
+        {% endfor %}
+    </ol>
+</nav>
